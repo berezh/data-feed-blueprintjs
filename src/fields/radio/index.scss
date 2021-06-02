@@ -1,0 +1,8 @@
+@import '../../styles/base.scss';
+
+.filter-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    @include children-row-margin(5px);
+}

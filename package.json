@@ -1,0 +1,75 @@
+{
+    "name": "data-feed-blueprintjs",
+    "version": "0.0.1",
+    "description": "Blueprint controls for data-feed",
+    "main": "dist/index.js",
+    "module": "dist/index.esm.js",
+    "types": "dist/index.d.ts",
+    "devDependencies": {
+        "@types/classnames": "^2.2.9",
+        "@blueprintjs/core": "^3.44.3",
+        "@blueprintjs/select": "^3.16.3",
+        "@types/jest": "^26.0.4",
+        "@types/react": "^16.8.25",
+        "@types/react-dom": "^16.8.5",
+        "@types/redux-form": "^8.3.1",
+        "@typescript-eslint/eslint-plugin": "^2.0.0",
+        "@typescript-eslint/parser": "^2.0.0",
+        "concurrently": "^4.1.1",
+        "eslint": "^6.2.0",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.14.3",
+        "jest": "^26.1.0",
+        "prettier": "^1.18.2",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "react-redux": "^7.2.4",
+        "redux-form": "^8.3.7",
+        "rollup": "^1.19.4",
+        "rollup-plugin-typescript2": "^0.22.1",
+        "rollup-plugin-uglify": "^6.0.3",
+        "ts-jest": "^26.1.1",
+        "ts-node": "^8.3.0",
+        "tslib": "^1.10.0",
+        "classnames": "^2.2.6",
+        "typescript": "^3.5.3"
+    },
+    "peerDependencies": {
+        "react": "^16.8.0",
+        "react-dom": "^16.8.0",
+        "react-redux": "^7.0.0",
+        "redux-form": "^8.0.0",
+        "@blueprintjs/core": "^3.0.0",
+        "@blueprintjs/select": "^3.0.0"
+    },
+    "scripts": {
+        "build": "rollup -c",
+        "build-watch": "rollup -c -w",
+        "test": "jest --config jest.config.js",
+        "pretest": "npm run build",
+        "lint": "eslint --ext .ts,.tsx src/",
+        "lint:fix": "eslint --ext .ts,.tsx src/ --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/berezh/data-feed-blueprintjs.git"
+    },
+    "keywords": [
+        "table",
+        "data",
+        "feed",
+        "feed view",
+        "blueprintjs"
+    ],
+    "author": "Vadym Poberezhnyi",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/berezh/data-feed-blueprintjs/issues"
+    },
+    "homepage": "https://github.com/berezh/data-feed-blueprintjs#readme",
+    "files": [
+        "dist"
+    ],
+    "dependencies": {}
+}
