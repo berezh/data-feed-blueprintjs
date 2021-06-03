@@ -4,7 +4,7 @@ import pkg from './package.json';
 import { uglify } from 'rollup-plugin-uglify';
 import fs from 'fs';
 
-const testAppPath = 'D:/berezh/data-feed-test/src/data-feed';
+const testAppPath = 'D:/berezh/data-feed-test/src/data-feed-blueprintjs';
 
 const plugins = [
     typescript({
