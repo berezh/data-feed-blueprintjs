@@ -1,5 +1,5 @@
 import React from 'react';
-import { WrappedFieldProps, BaseFieldProps, Field } from 'redux-form';
+import { WrappedFieldProps, Field } from 'redux-form';
 import { IconName, InputGroup } from '@blueprintjs/core';
 
 interface OwnProps {
@@ -8,11 +8,7 @@ interface OwnProps {
     leftIcon?: IconName;
 }
 
-export interface FieldFormTextProps extends BaseFieldProps<OwnProps>, OwnProps {}
-
-type CurrentComponentProps = OwnProps & WrappedFieldProps;
-
-const CurrentComponent: React.FC<CurrentComponentProps> = ({ input: restinput, ...rest }) => {
+const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({ input: restinput, ...rest }) => {
     return <InputGroup {...restinput} {...rest} />;
 };
 

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { ValueOption } from '../../interfaces';
+import ValueOption from '../../interfaces/value-option';
 import { FilterRadioField } from '../radio';
 
 interface Prpops {

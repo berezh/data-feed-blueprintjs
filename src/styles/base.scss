@@ -1,0 +1,29 @@
+// @include tile-wrapper;
+@mixin tile-wrapper {
+    background-color: #fff;
+    // box-shadow: 0 0 5px #c4bbca;
+    // border-radius: 3px;
+    border: 1px solid #e8e4eb;
+}
+
+@mixin children-row-margin($size: 0.5em) {
+    > * {
+        &:not(:last-child) {
+            margin-right: $size;
+        }
+    }
+}
+
+@mixin children-column-margin($size: 0.5em) {
+    > * {
+        &:not(:last-child) {
+            margin-bottom: $size;
+        }
+    }
+}
+
+@mixin children() {
+    > * {
+        @content;
+    }
+}

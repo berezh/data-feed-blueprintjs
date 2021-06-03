@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { Field, WrappedFieldProps } from 'redux-form';
 import { ButtonGroup, Button } from '@blueprintjs/core';
-import { ValueOption } from '../../interfaces';
+import ValueOption from '../../interfaces/value-option';
 
 import './index.scss';
 
@@ -10,9 +10,7 @@ interface OwnProps {
     label?: string;
 }
 
-type CurrentComponentProps = OwnProps & WrappedFieldProps;
-
-const CurrentComponent: React.FC<CurrentComponentProps> = ({
+const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
     label,
     input: { value: inputValue, name: inputName, onChange },
     options,

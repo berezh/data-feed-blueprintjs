@@ -2,7 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { Field, WrappedFieldProps } from 'redux-form';
 import { MenuItem, Button, ButtonGroup } from '@blueprintjs/core';
 import { IItemRendererProps, Select } from '@blueprintjs/select';
-import { ValueOption } from '../../interfaces';
+import ValueOption from '../../interfaces/value-option';
 
 const OptionSelect = Select.ofType<ValueOption>();
 
@@ -12,13 +12,11 @@ interface OwnProps {
     valueField?: string;
 }
 
-type CurrentComponentProps = OwnProps & WrappedFieldProps;
-
 function getValue(option: any, valueField?: string): any {
     return option ? option[valueField || 'value'] : undefined;
 }
 
-const CurrentComponent: React.FC<CurrentComponentProps> = ({
+const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
     input: { value, onChange },
     options,
     placeholder,
