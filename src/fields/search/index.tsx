@@ -1,5 +1,5 @@
 import React from 'react';
-import { FilterTextField } from '../text';
+import { BpFilterTextField } from '../text';
 
 interface Prpops {
     name?: string;
@@ -7,6 +7,6 @@ interface Prpops {
     placeholder?: string;
 }
 
-export const FilterSearchField: React.FC<Prpops> = ({ name = 'search', placeholder, ...props }) => {
-    return <FilterTextField placeholder={placeholder || 'Search'} leftIcon="search" name={name} {...props} />;
+export const BpFilterSearchField: React.FC<Prpops> = ({ name = 'search', placeholder, ...props }) => {
+    return <BpFilterTextField placeholder={placeholder || 'Search'} leftIcon="search" name={name} {...props} />;
 };

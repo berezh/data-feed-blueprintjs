@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import ValueOption from '../../interfaces/value-option';
-import { FilterRadioField } from '../radio';
+import { BpFilterRadioField } from '../radio';
 
 interface Prpops {
     name: string;
@@ -21,5 +21,5 @@ export const FilterBoolField: React.FC<Prpops> = props => {
         ];
     }, []);
 
-    return <FilterRadioField options={yesNoOptions as any} {...props} />;
+    return <BpFilterRadioField options={yesNoOptions as any} {...props} />;
 };

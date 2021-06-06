@@ -23,9 +23,9 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
     );
 
     return (
-        <div className="filter-radio">
+        <div className="df-bp-field-radio">
             <input type="hidden" name={inputName} value={inputValue} />
-            {label ? <div className="filter-radio__label">{label}</div> : null}
+            {label ? <div className="df-bp-field-radio__label">{label}</div> : null}
             <ButtonGroup>
                 {options.map(({ value, text }, i) => (
                     <Button small key={i} onClick={() => handleClick(value)} active={value === inputValue}>
@@ -41,6 +41,6 @@ interface Prpops extends OwnProps {
     name: string;
 }
 
-export const FilterRadioField: React.FC<Prpops> = props => {
+export const BpFilterRadioField: React.FC<Prpops> = props => {
     return <Field component={CurrentComponent} {...props} />;
 };

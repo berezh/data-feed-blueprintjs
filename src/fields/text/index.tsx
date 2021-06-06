@@ -16,6 +16,6 @@ interface Prpops extends OwnProps {
     name?: string;
 }
 
-export const FilterTextField: React.FC<Prpops> = ({ ...props }) => {
+export const BpFilterTextField: React.FC<Prpops> = ({ ...props }) => {
     return <Field component={CurrentComponent} {...props} />;
 };
