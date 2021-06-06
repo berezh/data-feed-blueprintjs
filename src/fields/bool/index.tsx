@@ -7,7 +7,7 @@ interface Prpops {
     label?: string;
 }
 
-export const FilterBoolField: React.FC<Prpops> = props => {
+export const BpFilterBoolField: React.FC<Prpops> = props => {
     const yesNoOptions = useMemo<ValueOption<boolean>[]>(() => {
         return [
             {
