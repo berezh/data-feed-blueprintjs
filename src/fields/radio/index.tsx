@@ -9,12 +9,14 @@ import './index.scss';
 interface OwnProps {
     options: ValueOption[];
     label?: string;
+    small?: boolean;
 }
 
 const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
     label,
     input: { value: inputValue, name: inputName, onChange },
     options,
+    small,
 }) => {
     const handleClick = useCallback(
         (value: string | number | boolean) => {
@@ -29,7 +31,7 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
             {label ? <div className="df-bp-field-radio__label">{label}</div> : null}
             <ButtonGroup>
                 {options.map(({ value, text }, i) => (
-                    <Button small key={i} onClick={() => handleClick(value)} active={value === inputValue}>
+                    <Button small={small} key={i} onClick={() => handleClick(value)} active={value === inputValue}>
                         {text}
                     </Button>
                 ))}

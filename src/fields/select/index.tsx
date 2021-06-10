@@ -1,16 +1,23 @@
 import React, { useCallback, useMemo } from 'react';
 import { Field, WrappedFieldProps } from 'redux-form';
 import { MenuItem, Button, ButtonGroup } from '@blueprintjs/core';
-import { IItemRendererProps, Select } from '@blueprintjs/select';
+import { IItemModifiers, IItemRendererProps, Select } from '@blueprintjs/select';
 
 import ValueOption from '../../interfaces/value-option';
 
 const OptionSelect = Select.ofType<ValueOption>();
 
+export interface BpFilterSelectItem {
+    item: ValueOption;
+    onClick: (event: React.MouseEvent<HTMLElement>) => void;
+    modifiers: IItemModifiers;
+}
+
 interface OwnProps {
     options: ValueOption[];
     placeholder?: string;
     valueField?: string;
+    renderItem?: (options: BpFilterSelectItem) => React.ReactElement;
 }
 
 function getValue(option: any, valueField?: string): any {
@@ -22,6 +29,7 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
     options,
     placeholder,
     valueField,
+    renderItem,
 }) => {
     const activeItem = useMemo(() => {
         return options.find((x) => getValue(x, valueField) === value);
@@ -40,6 +48,11 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
             if (!modifiers.matchesPredicate) {
                 return null;
             }
+
+            if (renderItem) {
+                return renderItem({ item: option, onClick: handleClick, modifiers });
+            }
+
             return (
                 <MenuItem
                     active={modifiers.active}
@@ -50,7 +63,7 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
                 />
             );
         },
-        [valueField]
+        [valueField, renderItem]
     );
 
     const handleInterPredicate = useCallback((query, item) => {
