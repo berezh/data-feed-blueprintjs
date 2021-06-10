@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import { Field, WrappedFieldProps } from 'redux-form';
 import { ButtonGroup, Button } from '@blueprintjs/core';
+
 import ValueOption from '../../interfaces/value-option';
 
 import './index.scss';
@@ -19,7 +20,7 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
         (value: string | number | boolean) => {
             onChange(value === inputValue ? '' : value);
         },
-        [inputValue],
+        [inputValue]
     );
 
     return (
@@ -41,6 +42,6 @@ interface Prpops extends OwnProps {
     name: string;
 }
 
-export const BpFilterRadioField: React.FC<Prpops> = props => {
+export const BpFilterRadioField: React.FC<Prpops> = (props) => {
     return <Field component={CurrentComponent} {...props} />;
 };

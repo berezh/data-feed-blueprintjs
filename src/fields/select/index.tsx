@@ -2,6 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { Field, WrappedFieldProps } from 'redux-form';
 import { MenuItem, Button, ButtonGroup } from '@blueprintjs/core';
 import { IItemRendererProps, Select } from '@blueprintjs/select';
+
 import ValueOption from '../../interfaces/value-option';
 
 const OptionSelect = Select.ofType<ValueOption>();
@@ -23,7 +24,7 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
     valueField,
 }) => {
     const activeItem = useMemo(() => {
-        return options.find(x => getValue(x, valueField) === value);
+        return options.find((x) => getValue(x, valueField) === value);
     }, [value]);
 
     const caption = useMemo(() => {
@@ -49,7 +50,7 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
                 />
             );
         },
-        [valueField],
+        [valueField]
     );
 
     const handleInterPredicate = useCallback((query, item) => {
@@ -69,7 +70,7 @@ const CurrentComponent: React.FC<OwnProps & WrappedFieldProps> = ({
             filterable={false}
             itemRenderer={handleItemRenderer}
             itemPredicate={handleInterPredicate}
-            onItemSelect={item => onChange(getValue(item, valueField))}
+            onItemSelect={(item) => onChange(getValue(item, valueField))}
             noResults={noResults}
         >
             <ButtonGroup style={{ width: '100%', display: 'flex' }}>
@@ -84,6 +85,6 @@ interface Prpops extends OwnProps {
     name: string;
 }
 
-export const BpFilterSelectField: React.FC<Prpops> = props => {
+export const BpFilterSelectField: React.FC<Prpops> = (props) => {
     return <Field component={CurrentComponent} {...props} />;
 };

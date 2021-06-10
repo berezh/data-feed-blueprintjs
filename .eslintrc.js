@@ -1,7 +1,6 @@
 module.exports = {
-    extends: [
-        "varp"
-    ],
+    extends: ['varp'],
     rules: {
-    }
-}
+        'import/no-default-export': 'off',
+    },
+};

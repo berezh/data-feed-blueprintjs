@@ -1,7 +1,8 @@
 import typescript from 'rollup-plugin-typescript2';
 import scss from 'rollup-plugin-scss';
-import pkg from './package.json';
 import { uglify } from 'rollup-plugin-uglify';
+
+import pkg from './package.json';
 import fs from 'fs';
 
 const testAppPath = 'D:/berezh/data-feed-test/src/data-feed-blueprintjs';
@@ -12,7 +13,7 @@ const plugins = [
     }),
     scss({
         // output: false,
-        output: function(styles) {
+        output: function (styles) {
             fs.writeFileSync('dist/index.css', styles);
             if (process.env.BUILD !== 'production') {
                 fs.writeFileSync(`${testAppPath}/index.css`, styles);
@@ -30,7 +31,7 @@ if (process.env.BUILD === 'production') {
     plugins.push(
         uglify({
             nameCache: {},
-        }),
+        })
     );
 } else {
     output.push({
