@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
+import { ValueOption } from 'data-feed';
 
-import ValueOption from '../../interfaces/value-option';
 import { BpFilterRadioField } from '../radio';
 
 interface Prpops {

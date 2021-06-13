@@ -2,8 +2,7 @@ import React, { useCallback, useMemo } from 'react';
 import { Field, WrappedFieldProps } from 'redux-form';
 import { MenuItem, Button, ButtonGroup } from '@blueprintjs/core';
 import { IItemModifiers, IItemRendererProps, Select } from '@blueprintjs/select';
-
-import ValueOption from '../../interfaces/value-option';
+import { ValueOption } from 'data-feed';
 
 const OptionSelect = Select.ofType<ValueOption>();
 

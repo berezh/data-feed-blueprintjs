@@ -1,8 +1,7 @@
 import React, { useCallback } from 'react';
 import { Field, WrappedFieldProps } from 'redux-form';
 import { ButtonGroup, Button } from '@blueprintjs/core';
-
-import ValueOption from '../../interfaces/value-option';
+import { ValueOption } from 'data-feed';
 
 import './index.scss';
 
