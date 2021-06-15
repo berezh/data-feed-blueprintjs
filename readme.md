@@ -6,6 +6,9 @@ Data feed presentation as alternative to table.
     <img src="https://nodei.co/npm/data-feed-blueprintjs.png?mini=true">
 </a>
 
+
+BlueprintJS components for `data-feed`
+
 ## Installation:
 
 ```
