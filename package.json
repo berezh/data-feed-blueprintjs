@@ -1,6 +1,6 @@
 {
     "name": "data-feed-blueprintjs",
-    "version": "0.0.7",
+    "version": "0.0.8",
     "description": "Blueprint controls for data-feed",
     "main": "dist/index.js",
     "module": "dist/index.esm.js",
@@ -43,12 +43,12 @@
         "typescript": "^3.5.3"
     },
     "peerDependencies": {
-        "react": ">16",
-        "react-dom": ">16",
-        "react-redux": ">7",
-        "redux-form": ">8",
+        "react": ">=16",
+        "react-dom": ">=16",
+        "react-redux": ">=7",
+        "redux-form": ">=8",
         "@blueprintjs/core": "3.x",
-        "@blueprintjs/select": "^3.x"
+        "@blueprintjs/select": "3.x"
     },
     "scripts": {
         "build": "rollup -c",
